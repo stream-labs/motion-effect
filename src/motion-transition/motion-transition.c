@@ -98,14 +98,14 @@ static bool append_item_list(obs_scene_t *scene, obs_sceneitem_t *item_a, void *
 		crop_b = &next->start_crop;
 	}
 
-	obs_sceneitem_get_info(item_a, info_a);
+	obs_sceneitem_get_info2(item_a, info_a);
 	obs_sceneitem_get_crop(item_a, crop_a);
 	item_b = obs_scene_find_source(list_cmp->scene, 
 		obs_source_get_name(source_a));
 
 
 	if (item_b) {
-		obs_sceneitem_get_info(item_b, info_b);
+		obs_sceneitem_get_info2(item_b, info_b);
 		obs_sceneitem_get_crop(item_b, crop_b);
 		transform_variation = same_transform_type(info_a, info_b) && (item_a->user_visible==item_b->user_visible);
 	}
